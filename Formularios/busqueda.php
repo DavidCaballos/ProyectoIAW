@@ -1,5 +1,5 @@
 <?php
-include '../Clases/contenido.php';
+include '../Clases/Contenido.php';
 session_start();
 if (isset($_POST['BuscarN'])){
     $buscar=Busqueda::busca($_POST['nombreN']);
@@ -7,7 +7,7 @@ if (isset($_POST['BuscarN'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
@@ -29,7 +29,7 @@ if (isset($_POST['BuscarN'])){
     echo $buscar->getopc(); ?></ul>
     <br />
     
-    <a href="./busqueda.php">Volver al formulario</a><br />
+    <a href="./Busqueda.php">Volver al formulario</a><br />
     <br />
     </form>
     </div>
@@ -37,7 +37,7 @@ if (isset($_POST['BuscarN'])){
     </html>
         <?php
          }else{ echo 'No existe el nombre de dicho video'; 
-        ?> <a href="./busqueda.php">Volver al formulario</a> <?php }
+        ?> <a href="./Busqueda.php">Volver al formulario</a> <?php }
         } 
 elseif (isset ($_POST['BuscarT'])){       
     $buscart=Busqueda::buscat($_POST['video']);
@@ -45,7 +45,7 @@ elseif (isset ($_POST['BuscarT'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
@@ -69,14 +69,14 @@ elseif (isset ($_POST['BuscarT'])){
     ?>
     <br />
     
-    <a href="./busqueda.php">Volver al formulario de busqueda</a><br />
+    <a href="./Busqueda.php">Volver al formulario de busqueda</a><br />
     <br />
     </div>
     </body>
     </html>
         <?php
          }else{ echo 'No hay existencias de dicho tipo'; 
-        ?> <a href="./busqueda.php">Volver al formulario de busqueda</a> <?php }    
+        ?> <a href="./Busqueda.php">Volver al formulario de busqueda</a> <?php }    
    
 
 }
@@ -86,7 +86,7 @@ elseif (isset ($_POST['BuscarD'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
@@ -110,14 +110,14 @@ elseif (isset ($_POST['BuscarD'])){
     ?>
     <br />
     
-    <a href="./busqueda.php">Volver al formulario de busqueda</a><br />
+    <a href="./Busqueda.php">Volver al formulario de busqueda</a><br />
     <br />
     </div>
     </body>
     </html>
         <?php
          }else{ echo 'No hay videos con esa duracion'; 
-        ?> <a href="./busqueda.php">Volver al formulario de busqueda</a> <?php } 
+        ?> <a href="./Busqueda.php">Volver al formulario de busqueda</a> <?php } 
 }
 elseif (isset ($_POST['BuscarG'])){       
     $buscarg=Busqueda::buscag($_POST['genero']);
@@ -125,7 +125,7 @@ elseif (isset ($_POST['BuscarG'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
@@ -149,14 +149,14 @@ elseif (isset ($_POST['BuscarG'])){
     ?>
     <br />
     
-    <a href="./busqueda.php">Volver al formulario de busqueda</a><br />
+    <a href="./Busqueda.php">Volver al formulario de busqueda</a><br />
     <br />
     </div>
     </body>
     </html>
         <?php
          }else{ echo 'No hay videos con esa duracion'; 
-        ?> <a href="./busqueda.php">Volver al formulario de busqueda</a> <?php }
+        ?> <a href="./Busqueda.php">Volver al formulario de busqueda</a> <?php }
 }
 elseif (isset($_POST['BuscarI'])){
     $buscarI=Busqueda::buscaI($_POST['id']);
@@ -166,7 +166,7 @@ elseif (isset($_POST['BuscarI'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
@@ -188,16 +188,16 @@ elseif (isset($_POST['BuscarI'])){
     echo $buscarI->getopc(); ?></ul>
     <br />
     
-    <a href="./busqueda.php">Volver al formulario</a><br />
+    <a href="./Busqueda.php">Volver al formulario</a><br />
     <br />
-    <a href="./alquilar.php">Ir a alquilar/modificar el alquiler del video</a><br />
+    <a href="./Alquilar.php">Ir a alquilar/modificar el alquiler del video</a><br />
     </form>
     </div>
     </body>
     </html>
         <?php
          }else{ echo 'No existe el nombre de dicho video'; 
-        ?> <a href="./busqueda.php">Volver al formulario</a> <?php }
+        ?> <a href="./Busqueda.php">Volver al formulario</a> <?php }
         }
 else { ?>
 <!DOCTYPE html>
@@ -205,7 +205,7 @@ else { ?>
     <head>
         <title>Aplicacion IAW</title>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="group">
@@ -215,7 +215,7 @@ else { ?>
                 <center><input type="text" name="emailusu" value="<?php
                     $emailusu=$_SESSION['email'];
                     echo $emailusu;
-                    ?>" disabled center></center>
+                    ?>" disabled></center>
                     Tipos: <br>
                     <input type="radio" id="serie" name="video" value="Serie">Serie
                     <input type="radio" id="pelicula" name="video" value="Pelicula">Pelicula
@@ -244,7 +244,8 @@ else { ?>
                     <input type="submit" name="BuscarD" value="Buscar por duracion" />
                     <input type="submit" name="BuscarG" value="Buscar por genero" /></center>
                     <center><input type="submit" name="BuscarN" value="Buscar por nombre" />
-                    <input type="submit" name="BuscarI" value="Buscar por id" /></center>
+                    <input type="submit" name="BuscarI" value="Buscar por id" />
+                    <a href="./index2.php"><input type="button" name="index" value="Ir a la pagina principal" /></a></center>
                 </form>
         </div>
     </body>

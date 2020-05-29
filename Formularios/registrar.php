@@ -1,17 +1,17 @@
 <?php
-include '../Clases/usuario.php';
+include '../Clases/Usuario.php';
 if (isset ($_POST['enviar'])){
     $guardar=new Usuario($_POST['nombreusu'],$_POST['apellidos'],$_POST['contra'],$_POST['email'],$_POST['fecha']);
     $guardar->guardar();?>
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
     <p>Se ha insertado correctamente, ¿que desea hacer ahora?<p>
-    <br ><a href="./registrar.php">Volver al registro</a><br ><a href="./inicio.php">Ir a Inicio de Sesion</a>
+    <br ><a href="./Registrar.php">Volver al registro</a><br ><a href="./Inicio.php">Ir a Inicio de Sesion</a>
     </div>
     </body>
     </html>
@@ -20,7 +20,7 @@ if (isset ($_POST['enviar'])){
 elseif (isset ($_POST['eliminar'])){
     $eliminar=new Usuario($_POST['email']);
     $eliminar->borrar();?>
-    <br ><a href="./registrar.php">Volver al registro</a><br ><a href="./inicio.php">Ir a Inicio/Eliminar Sesion</a>
+    <br ><a href="./Registrar.php">Volver al registro</a><br ><a href="./Inicio.php">Ir a Inicio/Eliminar Sesion</a>
 <?php
 }
 else{
@@ -30,7 +30,7 @@ else{
     <head>
         <title>Aplicacion IAW</title>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="group">
@@ -45,7 +45,7 @@ else{
                     <input type="submit" name="enviar" value="Enviar" />
                     <input type="submit" name="reset" value="Limpiar" />
                     <input type="submit" name="eliminar" value="Eliminar Usuario" />
-                    <a href="./inicio.php"><input type="button" name="inicio" value="Inicio sesion" /></a>
+                    <a href="./Inicio.php"><input type="button" name="inicio" value="Inicio sesion" /></a>
                 </form>
         </div>
     </body>

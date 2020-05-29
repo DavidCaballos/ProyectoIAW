@@ -1,29 +1,26 @@
 <?php
 require_once 'ClaseConexion.php';
-class Lista
+Class Lista
 {
-    private $name;
-
-    public function __construct()
-    {
-        $this->decir();
-    }
-
-    public function decir()
-    {
-        if (isset($this->name)) {
-            echo "Soy {$this->name}.\n";
-        } else {
-            echo "Aún no tengo nombre.\n";
+    private $emailusu;
+    public function getemailusu() {
+        return $this->emailusu;
+     }
+     public function setemailusu($emailusu) {
+      $this->emailusu = $emailusu;
+     }
+     public static function mostrar($emailusu){
+        $conexion = new Conexion();
+        $consulta = $conexion->prepare('SELECT CUENTA_EMAIL,ID_VIDEO,FECHA_ALQUILER,FECHA_DEVOLUCION FROM prestamo WHERE CUENTA_EMAIL = :email');
+        $consulta->bindParam(':email',$emailusu);
+        $consulta->execute();
+        $registro = $consulta->fetchAll();
+        if($registro){
+            return $registro;
+        }else{
+            return false;
         }
-    }
+     }
 }
 
-$sth = $dbh->query("SELECT * FROM prestamo");
-$sth->setFetchMode(PDO::FETCH_CLASS, 'Lista');
-$persona = $sth->fetch();
-$persona->decir();
-$sth->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Lista');
-$persona = $sth->fetch();
-$persona->decir();
 ?>

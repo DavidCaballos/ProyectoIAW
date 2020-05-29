@@ -1,5 +1,5 @@
 <?php 
-include '../Clases/prestamo.php';
+include '../Clases/Prestamo.php';
 session_start();
 $emailusu=$_SESSION['email'];
 $id=$_SESSION['id'];
@@ -9,13 +9,13 @@ if (isset ($_POST['alquilar'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
     <p>Se ha alquilado dicho video, ¿que desea hacer ahora?<p>
-    <br ><a href="./busqueda.php">Volver a la busqueda</a><br >
-    <br ><a href="./lista.php">Ver mis alquileres</a><br >
+    <br ><a href="./Index2.php">Volver a la pagina principal</a><br >
+    <br ><a href="./Lista.php">Ver mis alquileres</a><br >
     </div>
     </body>
     </html>
@@ -27,13 +27,13 @@ elseif (isset ($_POST['modificar'])){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
     <p>Se ha modificado la fecha del alquiler, ¿que desea hacer ahora?<p>
-    <br ><a href="./busqueda.php">Volver a la busqueda</a><br >
-    <br ><a href="./lista.php">Ver mis alquileres</a><br >
+    <br ><a href="./Index2.php">Volver a la pagina principal</a><br >
+    <br ><a href="./Lista.php">Ver mis alquileres</a><br >
     </div>
     </body>
     </html>
@@ -46,7 +46,7 @@ else{
     <head>
         <title>Aplicacion IAW</title>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="group">
@@ -65,7 +65,7 @@ else{
                     Fecha de devolucion: <input type="date" name="fechaD" /><br />
                     <input type="submit" name="alquilar" value="Alquilar" />
                     <input type="submit" name="modificar" value="Modificar un alquiler" />
-                    <a href="./busqueda.php"><input type="button" name="busqueda" value="Volver a la busqueda" /></a>
+                    <a href="./Busqueda.php"><input type="button" name="busqueda" value="Volver a la busqueda" /></a>
                 </form>
         </div>
     </body>

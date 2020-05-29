@@ -1,5 +1,5 @@
 <?php
-include '../Clases/claseinicio.php';
+include '../Clases/ClaseInicio.php';
 if (isset ($_POST['iniciar'])){
 session_start();
 $emailusuario= (isset($_POST['email']))?$_POST['email']:'';
@@ -14,12 +14,12 @@ if ($comprobar==false or $_SESSION['contra']!==$comprobarcontra){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
     <p>Error en el inicio de sesion, su contraseña o email son erroneos</p>
-    <a href="./inicio.php">Ir a inicio de sesion</a>
+    <a href="./Inicio.php">Ir a inicio de sesion</a>
     </div>
     </body>
     </html>
@@ -29,12 +29,12 @@ if ($comprobar==false or $_SESSION['contra']!==$comprobarcontra){
     <html>
     <head>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <div class="group">
     <p>Se ha registrado correctamente</p>
-    <a href="./index2.php">Ir al inicio de la página</a>
+    <a href="./Index2.php">Ir al inicio de la página</a>
     </div>
     </body>
     </html>
@@ -49,13 +49,13 @@ else{
     <head>
         <title>Aplicacion IAW</title>
         <meta charset="UTF-8" />
-        <link href="estilo.css" rel="stylesheet" type="text/css">
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <body>
         <div class="group">
             <center> <h1><em>VideoClub</em></h1> </center>
-            <center> <h3>Inico y eliminacion de usuarios</h3> </center>
+            <center> <h3>Inicio de sesion</h3> </center>
                 <form action="?" method="POST">
                     Email: <input type="text" name="email" REQUIRED /><br /><br />
                     Contraseña: <input type="password" name="contra" /><br /><br />
