@@ -7,9 +7,10 @@ $contraseniausu= (isset($_POST['contra']))?$_POST['contra']:'';
 $_SESSION['email']=$_POST['email'];
 $_SESSION['contra']=$_POST['contra'];
 $email=$_SESSION['email'];
+$contras=$_SESSION['contra'];
 $comprobar= Inicio::buscarporemail($_SESSION['email']);
-$comprobarcontra= Inicio::buscarporcontra($_SESSION['email']);
-if ($comprobar==false or $_SESSION['contra']!==$comprobarcontra){
+$comprobarcontra= Inicio::buscarporcontra($_SESSION['email'],$_SESSION['contra']);
+if ($comprobar==false or $comprobarcontra!==$contras){
     ?>
     <html>
     <head>
@@ -33,7 +34,7 @@ if ($comprobar==false or $_SESSION['contra']!==$comprobarcontra){
     </head>
     <body>
     <div class="group">
-    <p>Se ha registrado correctamente</p>
+    <p>Se ha iniciado sesion correctamente</p>
     <a href="./Index2.php">Ir al inicio de la página</a>
     </div>
     </body>

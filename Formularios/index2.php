@@ -38,6 +38,21 @@ if (isset($_POST['Milista'])){
     </div>
     </body>
     </html><?php
+    }else{?>
+        <html>
+        <head>
+            <meta charset="UTF-8" />
+            <link href="Estilo.css" rel="stylesheet" type="text/css">
+        </head>
+        <body>
+        <form action="" method="POST">
+        <div class="group">
+            <p>No hay videos alquilados</p>
+            <a href="./index2.php">Volver atras</a><br />
+        </form>
+        </div>
+        </body>
+        </html> <?php
     }
 }else{
 ?>

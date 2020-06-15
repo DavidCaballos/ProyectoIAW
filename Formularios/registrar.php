@@ -18,9 +18,19 @@ if (isset ($_POST['enviar'])){
 <?php
 }
 elseif (isset ($_POST['eliminar'])){
-    $eliminar=new Usuario($_POST['email']);
-    $eliminar->borrar();?>
-    <br ><a href="./Registrar.php">Volver al registro</a><br ><a href="./Inicio.php">Ir a Inicio/Eliminar Sesion</a>
+    Usuario::borrar($_POST['email']);?>
+        <html>
+    <head>
+        <meta charset="UTF-8" />
+        <link href="Estilo.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <div class="group">
+    <p>El alumno/a introducido/a ha sido borrado/a del registro<p>
+    <br ><a href="./Registrar.php">Volver al registro</a><br ><a href="./Inicio.php">Ir a Inicio de Sesion</a>
+    </div>
+    </body>
+    </html>
 <?php
 }
 else{

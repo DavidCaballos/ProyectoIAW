@@ -5,38 +5,37 @@
    private $email;
    const TABLA = 'usuario';
 
+   public function getemail() {
+      return $this->email;
+ }
+ public function setemail($email) {
+  $this->email = $email;
+ }
    public function getcontrasenia() {
         return $this->contrasenia;
    }
    public function setcontrasenia($contrasenia) {
     $this->contrasenia = $contrasenia;
    }
-   public function getemail() {
-        return $this->email;
-   }
-   public function setemail($email) {
-    $this->email = $email;
-   }
 
-public function __construct($nombre,$apellido,$contrasenia,$email,$fch_nacimiento) {
-   $this->contrasenia = $contrasenia;
+public function __construct($email,$contrasenia) {
    $this->email = $email;
+   $this->contrasenia = $contrasenia;
 }
 public static function buscarporemail($email){
      $conexion = new Conexion();
-     $consulta = $conexion->prepare('SELECT email FROM ' . self::TABLA . 'WHERE emailUsuario = :email');
+     $consulta = $conexion->prepare('SELECT email FROM usuario WHERE emailUsuario = :email');
      $consulta->bindParam(':email',$email);
      $consulta->execute();
      $conexion = null;
      return $email;
   }
-  public static function buscarporcontra($email){
+  public static function buscarporcontra($email,$contrasenia){
      $conexion = new Conexion();
-     $consulta = $conexion->prepare('SELECT contra FROM ' . self::TABLA . 'WHERE emailUsuario = :email');
+     $consulta = $conexion->prepare('SELECT contrasenaUsuario FROM usuario WHERE emailUsuario = :email');
      $consulta->bindParam(':email',$email);
      $consulta->execute();
-     $conexion = null;
-     return $email;
+     return $contrasenia;
   }
  }
 ?>

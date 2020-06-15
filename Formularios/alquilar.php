@@ -2,9 +2,8 @@
 include '../Clases/Prestamo.php';
 session_start();
 $emailusu=$_SESSION['email'];
-$id=$_SESSION['id'];
 if (isset ($_POST['alquilar'])){
-    $guardar=new Alquilar($_SESSION['email'],$_SESSION['id'],$_POST['fechaA'],$_POST['fechaD']);
+    $guardar=new Alquilar($_SESSION['email'],$_POST['id'],$_POST['fechaA'],$_POST['fechaD']);
     $guardar->insertar();?>
     <html>
     <head>
@@ -15,7 +14,6 @@ if (isset ($_POST['alquilar'])){
     <div class="group">
     <p>Se ha alquilado dicho video, ¿que desea hacer ahora?<p>
     <br ><a href="./Index2.php">Volver a la pagina principal</a><br >
-    <br ><a href="./Lista.php">Ver mis alquileres</a><br >
     </div>
     </body>
     </html>
@@ -33,7 +31,6 @@ elseif (isset ($_POST['modificar'])){
     <div class="group">
     <p>Se ha modificado la fecha del alquiler, ¿que desea hacer ahora?<p>
     <br ><a href="./Index2.php">Volver a la pagina principal</a><br >
-    <br ><a href="./Lista.php">Ver mis alquileres</a><br >
     </div>
     </body>
     </html>
@@ -57,10 +54,7 @@ else{
                     <?php
                     echo $emailusu;
                     ?>" disabled><br />
-                    Id de la pelicula para alquilar: <input type="text" name="id" value="
-                    <?php
-                    echo $id;
-                    ?>" disabled><br />
+                    Id de la pelicula para alquilar: <input type="text" name="id"><br />
                     Fecha de alquiler: <input type="date" name="fechaA" /><br />
                     Fecha de devolucion: <input type="date" name="fechaD" /><br />
                     <input type="submit" name="alquilar" value="Alquilar" />

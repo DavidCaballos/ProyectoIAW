@@ -37,7 +37,7 @@
    public function setfch_nacimiento($fch_nacimiento) {
     $this->fch_nacimiento = $fch_nacimiento;
 }
-public function __construct($email,$nombre=null,$apellido=null,$contrasenia=null,$fch_nacimiento=null) {
+public function __construct($nombre=null,$apellido=null,$contrasenia=null,$email,$fch_nacimiento=null) {
    $this->nombre = $nombre;
    $this->apellido = $apellido;
    $this->contrasenia = $contrasenia;
@@ -47,7 +47,7 @@ public function __construct($email,$nombre=null,$apellido=null,$contrasenia=null
 public function guardar(){
    $conexion = new Conexion();
    
-      $consulta = $conexion->prepare('INSERT INTO ' . self::TABLA .' (nombreUsuario,apellidoUsuario,contrasenaUsuario,emailUsuario,fechaNacimiento) 
+      $consulta = $conexion->prepare('INSERT INTO usuario (nombreUsuario,apellidoUsuario,contrasenaUsuario,emailUsuario,fechaNacimiento) 
       VALUES(:nombreusu,:apellidos,:contra,:email,:fecha)');
       $consulta->bindParam(':nombreusu',$this->nombre);
       $consulta->bindParam(':apellidos', $this->apellido);
@@ -58,12 +58,11 @@ public function guardar(){
    
    $conexion = null;
 }
-public function borrar(){
+public static function borrar($email){
    $conexion = new Conexion();
-   $consulta = $conexion->prepare('DELETE FROM ' . self::TABLA . ' WHERE emailUsuario = :email');
-   $consulta->bindParam(':email',$this->email);
+   $consulta = $conexion->prepare('DELETE FROM usuario WHERE emailUsuario = :email');
+   $consulta->bindParam(':email',$email);
    $consulta->execute();
-   echo "El alumno/a introducido/a ha sido borrado/a del registro.";
    $conexion = null;
 }
  }

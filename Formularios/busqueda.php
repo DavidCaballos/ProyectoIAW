@@ -155,7 +155,7 @@ elseif (isset ($_POST['BuscarG'])){
     </body>
     </html>
         <?php
-         }else{ echo 'No hay videos con esa duracion'; 
+         }else{ echo 'No hay videos con ese genero'; 
         ?> <a href="./Busqueda.php">Volver al formulario de busqueda</a> <?php }
 }
 elseif (isset($_POST['BuscarI'])){
@@ -196,7 +196,7 @@ elseif (isset($_POST['BuscarI'])){
     </body>
     </html>
         <?php
-         }else{ echo 'No existe el nombre de dicho video'; 
+         }else{ echo 'No existe el id de dicho video'; 
         ?> <a href="./Busqueda.php">Volver al formulario</a> <?php }
         }
 else { ?>
